@@ -3,6 +3,8 @@ sudo: required
 before_install:
 - .travis/oracle/download.sh
 - .travis/oracle/install.sh
+- /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh
+- .travis/sequelize/init.sh
 
 script:
 - node index.js
@@ -35,3 +37,6 @@ env:
     - ORACLE_FILE=oracle-xe-11.2.0-1.0.x86_64.rpm.zip
     - ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
     - ORACLE_SID=XE
+    - OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib
+    - OCI_INC_DIR=/u01/app/oracle/product/11.2.0/xe/rdbms/public
+
