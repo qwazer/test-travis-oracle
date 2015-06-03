@@ -1,0 +1,23 @@
+script:
+  - "node index.js"
+
+notifications:
+  email:
+    - lebretr@gmail.com
+
+language: node_js
+
+node_js:
+  - "0.10"
+  - "0.12"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+after_script:
+  - echo toto
