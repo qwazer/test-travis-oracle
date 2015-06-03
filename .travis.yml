@@ -3,7 +3,6 @@ sudo: required
 before_install:
 - .travis/oracle/download.sh
 - .travis/oracle/install.sh
-- export LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib/:$LD_LIBRARY_PATH && sudo ldconfig
 - .travis/sequelize/init.sh
 
 script:

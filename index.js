@@ -4,8 +4,8 @@ var oracledb = require('oracledb');
 
 oracledb.getConnection(
   {
-    user          : "hr",
-    password      : "welcome",
+    user          : "SEQUELIZE",
+    password      : "test",
     connectString : "localhost/XE"
   },
   function(err, connection)
