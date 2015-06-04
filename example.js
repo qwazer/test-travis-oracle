@@ -4,7 +4,7 @@ var Sequelize=require('sequelize-oracle')
   , uuid = require('node-uuid');
 
 
-var sequelize = new Sequelize('XE', 'sequelize', 'test', {
+var sequelize = new Sequelize('XE', 'hr', 'welcome', {
   host:'localhost',
   dialect:'oracle',
   // logging: null,
