@@ -1,5 +1,16 @@
+# Integrate Oracle Libraries (use by oracledb at build)
+export OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib
+export OCI_INC_DIR=/u01/app/oracle/product/11.2.0/xe/rdbms/public
+
 # Integrate Oracle Libraries (use by oracledb at execution)
 export LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib/:$LD_LIBRARY_PATH && sudo ldconfig
+
+
+# Create User for integrations tests
+"$ORACLE_HOME/bin/sqlplus" -L -S / AS SYSDBA <<SQL
+ALTER USER HR ACCOUNT UNLOCK;
+ALTER USER HR IDENTIFIED BY welcome;
+SQL
 
 # Create User for integrations tests
 "$ORACLE_HOME/bin/sqlplus" -L -S / AS SYSDBA <<SQL
