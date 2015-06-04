@@ -1,9 +1,9 @@
 sudo: required
 
 before_install:
-- .travis/oracle/download.sh
-- .travis/oracle/install.sh
-- .travis/sequelize/init.sh
+- . ./.travis/oracle/download.sh
+- . ./.travis/oracle/install.sh
+- . ./.travis/sequelize/init.sh
 
 script:
 - node example.js
