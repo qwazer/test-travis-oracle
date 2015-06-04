@@ -6,7 +6,7 @@ var Sequelize=require('sequelize-oracle')
 
 var sequelize = new Sequelize('XE', 'sequelize', 'test', {
   host:'localhost',
-	dialect:'oracle',
+  dialect:'oracle',
   // logging: null,
   pool:{
     maxConnections: 5,

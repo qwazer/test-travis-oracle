@@ -6,7 +6,7 @@ before_install:
 - .travis/sequelize/init.sh
 
 script:
-- node test.js
+- node example.js
 
 notifications:
   email:
