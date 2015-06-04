@@ -1,11 +1,11 @@
 'use strict';
 
-var Sequelize=require('./index')
+var Sequelize=require('sequelize-oracle')
   , uuid = require('node-uuid');
 
 
 var sequelize = new Sequelize('XE', 'sequelize', 'test', {
-  host:'192.168.56.101',
+  host:'localhost',
 	dialect:'oracle',
   // logging: null,
   pool:{
