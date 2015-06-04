@@ -2,16 +2,29 @@
 echo OCI_xxx_xxx
 echo ${OCI_LIB_DIR}
 echo ${OCI_INC_DIR}
-export OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib
-export OCI_INC_DIR=/u01/app/oracle/product/11.2.0/xe/rdbms/public
+export OCI_LIB_DIR="/u01/app/oracle/product/11.2.0/xe/lib"
+export OCI_INC_DIR="/u01/app/oracle/product/11.2.0/xe/rdbms/public"
+
+echo OCI_xxx_xxx
+echo ${OCI_LIB_DIR}
+echo ${OCI_INC_DIR}
+
+
+#    - OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib
+#    - OCI_INC_DIR=/u01/app/oracle/product/11.2.0/xe/rdbms/public
+#    - LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
 
 # Integrate Oracle Libraries (use by oracledb at execution)
 echo LD_LIBRARY_PATH
 echo ${LD_LIBRARY_PATH}
 echo $USER
 
-export LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib/:$LD_LIBRARY_PATH 
+export LD_LIBRARY_PATH="/u01/app/oracle/product/11.2.0/xe/lib/"
 sudo ldconfig
+
+echo LD_LIBRARY_PATH
+echo ${LD_LIBRARY_PATH}
+echo $USER
 
 
 # Create User for integrations tests
