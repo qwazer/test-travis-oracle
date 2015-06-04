@@ -1,13 +1,24 @@
+#!/bin/sh -e
+
+# on sauvegarde l'emplacement actuel
+CURRENT_PWD=`pwd -P`
+
+echo CURRENT_PWD ${CURRENT_PWD}
+echo dirname "$(dirname "$(readlink -f "$0")")"
+
+
+# Définition des variables pour download et install Oracle XE
+export ORACLE_FILE="oracle-xe-11.2.0-1.0.x86_64.rpm.zip"
+export ORACLE_HOME="/u01/app/oracle/product/11.2.0/xe"
+export ORACLE_SID="XE"
+
+.travis/oracle/download.sh
+
+.travis/oracle/install.sh
+
 # Integrate Oracle Libraries (use by oracledb at build)
-echo OCI_xxx_xxx
-echo ${OCI_LIB_DIR}
-echo ${OCI_INC_DIR}
 export OCI_LIB_DIR="/u01/app/oracle/product/11.2.0/xe/lib"
 export OCI_INC_DIR="/u01/app/oracle/product/11.2.0/xe/rdbms/public"
-
-echo OCI_xxx_xxx
-echo ${OCI_LIB_DIR}
-echo ${OCI_INC_DIR}
 
 
 #    - OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib
@@ -15,16 +26,8 @@ echo ${OCI_INC_DIR}
 #    - LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
 
 # Integrate Oracle Libraries (use by oracledb at execution)
-echo LD_LIBRARY_PATH
-echo ${LD_LIBRARY_PATH}
-echo $USER
-
 export LD_LIBRARY_PATH="/u01/app/oracle/product/11.2.0/xe/lib/"
 sudo ldconfig
-
-echo LD_LIBRARY_PATH
-echo ${LD_LIBRARY_PATH}
-echo $USER
 
 
 # Create User for integrations tests
