@@ -20,5 +20,6 @@ then
   sudo ldconfig
 
   # Unlock count for HR ( default oracle user) if disable
+  sudo chmod 755 .travis/sequelize/user.sh
   .travis/sequelize/user.sh
 fi
