@@ -7,31 +7,9 @@ before_install:
    docker pull wnameless/oracle-xe-11g;
    docker run -d -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g;
 
-
-
 notifications:
   email:
   - resheto@gmail.com
 
-language: node_js
+language: java
 
-node_js:
-- '0.10'
-
-branches:
-  only:
-  - master
-
-cache:
-  directories:
-  - node_modules
-
-after_script:
-- echo "after script"
-
-env:
-  global:
-    - secure: I/Wa0hzPlf6EOytMODbCaIvGuAx0sFOGHfUdwhCT7uK/1UJF94naO3m6p5pcM+SeSi8UxKDa18SkQi34ACKkX/qDR86K5OOphfQEhRvgIXo7XD22hX/tKgJEdbdIGBRvmzY428BenjJs1oe96TBGKV883ULnVkoZtwfNFOf+885+mopZZuFpiady0Zt2lRJjCELHTox1arYEpGZZTjPRxo4Ru9ep72V3c/tOwe35HiPocVDxKiYHYfox00xIRKpLMiVfJ/mcmUFaCoIWNkuZQbq+qkQPh2sSmapLUzMHK4+T6I/n2d0RHfXb/NGyiuNVRT8zKFD6BJyMlX0/KCX1c4K+eUoR6kxIqdIErN1JpfaeNebBj65PurPIAsI/NLuI57xQyn2LMga5rKucbI5nmtzPgC/W7KUkJxf6uK+eOh60LX8cldJP4DWcTxBRQWddkA+GImu1JMIxtbOy3KS7F64dtHmytnj7Ubyz70QlOdrV1O0nhuMJUQUwA1sFXk8Te1wZTpRPfpDTwOmdw+ls9FYEMHsfggONADTf7ph1QISITieY7K0sObiEocfFU5lOwHf6TGxE43EkP+Uv4NtgM/jGoBaEgTRotGqIuZYbtQxzhembr88Aknv7jZNSyBKXzpazJ4ODCYwXD12U6cFXZ/4GJIglGXRoBwq2SrAbYx8=
-    - secure: iiXpVKiy551p4d5Eh0nyScsKtuxGCuooEKkRcjoVOqhi0sWA5r201MjRulOwGCbgwEjDTS0X/Af5u9pAnv1Xe0vgZ4tK+ex2ax8hJI1tXcDH3Kbi/bZba3oG2ijv054yfWJgoBiVwFplKdogYmvEFB7WV5A7TgETKDX8ghKMGQFVi+eJfClQQIavlDY0dE/JMNAV6bpNrKwo31nM9dSE5InYaB9aONNHa95uVT1k2qYFCO9hmKDJbCg2XncdV3SASvsvDbWvzBP7ubakigVs1VXS5pIx1ixzqnNeeqDJ7HYRg9J6T8EgDuiPC1mL6lvx+gymtExqfbJ80wlkd59yFuIzac8B44xRT6hr3ZClqhjfwqzwovGPKUz5KoD9XyBsPA0++dFLvOhzx4VpgiL27RYQ6wJDByhNlOk5EpZpkw2e4Bn/jwrsMwCOFZ7NY5qrzuk+37PIHcmDc8sdW77L4o5Dg/cS2sKlwB67Y7w7VUPWOUdXGg0X8bXSljp4nv/0cWMzjoFF70jKjOmo7Q1TqWx1r9woEsG+qwVmR+WPBIj7sQJNwWT+WIlwNMbRXc1rVgg2X99keubKkzeshjfPjo9vjdHlieTDdFlWRXskl3BFhIstnKkuERBzjEZ+8u567f0n3hTAdA9toDfWIHs9HTItduMGcJ1oPkmRdiW4fNg=
-  matrix:
-  - DIALECT=oracle
