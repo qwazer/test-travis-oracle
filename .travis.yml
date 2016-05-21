@@ -11,5 +11,5 @@ notifications:
   email:
   - resheto@gmail.com
 
-language: java
+language: bash
 
